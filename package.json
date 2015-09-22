@@ -1,0 +1,17 @@
+{
+  "name": "csjs",
+  "version": "0.0.0",
+  "description": "Cascading Style JavaScripts",
+  "author": "Ryan Tsao <ryan.j.tsao@gmail.com>",
+  "main": "index.js",
+  "homepage": "https://github.com/rtsao/csjs",
+  "repository": "git@github.com:rtsao/csjs.git",
+  "bugs": "https://github.com/rtsao/csjs/issues",
+  "scripts": {
+    "test": "node test/index.js"
+  },
+  "devDependencies": {
+    "tape": "^4.2.0"
+  },
+  "license": "MIT"
+}
