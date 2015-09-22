@@ -1,6 +1,6 @@
 {
   "name": "csjs",
-  "version": "0.0.0",
+  "version": "0.0.0-alpha.0",
   "description": "Cascading Style JavaScripts",
   "author": "Ryan Tsao <ryan.j.tsao@gmail.com>",
   "main": "index.js",
