@@ -1,1 +1,1 @@
-module.exports = require('./lib/css-extract-extends');
+module.exports = require('./lib/csjs');

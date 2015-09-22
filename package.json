@@ -8,7 +8,7 @@
   "repository": "git@github.com:rtsao/csjs.git",
   "bugs": "https://github.com/rtsao/csjs/issues",
   "scripts": {
-    "test": "node test/index.js"
+    "test": "node --harmony test/index.js"
   },
   "devDependencies": {
     "tape": "^4.2.0"

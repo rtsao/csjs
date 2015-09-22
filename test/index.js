@@ -1,6 +1,10 @@
-var test = require('tape');
+'use strict';
 
-test('dummy test', function t(assert) {
-  assert.ok(true, 'dummy assert');
+var test = require('tape');
+var csjs = require('../');
+
+test('basic template string functionality', function t(assert) {
+  var result = csjs`foo`;
+  assert.equal(result.css, 'foo', 'basic template string works');
   assert.end();
 });
