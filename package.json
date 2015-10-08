@@ -13,5 +13,8 @@
   "devDependencies": {
     "tape": "^4.2.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "base-x": "^1.0.1"
+  }
 }
