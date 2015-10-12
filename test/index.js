@@ -1,17 +1,17 @@
 'use strict';
 
-var test = require('tape');
-var csjs = require('../');
-var getCss = require('../get-css');
+const test = require('tape');
+const csjs = require('../');
+const getCss = require('../get-css');
 
 test('basic template string functionality', function t(assert) {
-  var result = csjs`#foo {color: red;}`;
+  const result = csjs`#foo {color: red;}`;
   assert.equal(getCss(result), '#foo {color: red;}', 'can retrieve basic css');
   assert.end();
 });
 
-test('basic template string functionality', function t(assert) {
-  var result = csjs`
+test('basic scoping functionality', function t(assert) {
+  const result = csjs`
 
     .foo {}
     .bar extends .foo {}
@@ -24,27 +24,75 @@ test('basic template string functionality', function t(assert) {
   assert.end();
 });
 
-test('basic template string functionality', function t(assert) {
-  var one = csjs`
+test('multiple extensions', function t(assert) {
+  const one = csjs`
 
     .foo {}
     .bar extends .foo {}
 
   `;
 
-  var two = csjs`
+  const two = csjs`
 
     .baz extends ${one.bar} {}
     .fob extends ${one.foo} {}
 
   `;
+  // TODO fix extra space?
+  const twoExpected = `
+
+    .baz_3qXjB  {}
+    .fob_3qXjB  {}
+
+  `;
+
 
   assert.ok(two, 'result exists');
-  assert.ok(two, 'extensions exist');
+  assert.equal(getCss(two), twoExpected, 'scoped css matches');
   assert.ok(two.baz, 'baz has an extension');
-  assert.equal(two.baz.className, 'baz_1egru bar_4d3PW foo_4d3PW',
+  assert.equal(two.baz.className, 'baz_3qXjB bar_4d3PW foo_4d3PW',
     'baz extends both bar and foo');
-  assert.equal(two.fob.className, 'fob_1egru foo_4d3PW',
+  assert.equal(two.fob.className, 'fob_3qXjB foo_4d3PW',
     'fob extends foo');
+  assert.end();
+});
+
+test('keyframes scoping', function t(assert) {
+  const one = csjs`
+
+    @keyframes yolo {}
+
+  `;
+
+  const oneExpected = `
+
+    @keyframes yolo_5Eq7W {}
+
+  `;
+
+  assert.ok(one.yolo, 'animation yolo is exported');
+  assert.equal(getCss(one), oneExpected, 'animation is scoped in css output');
+
+  const two = csjs`
+
+    .foo {
+      animation: ${one.yolo} 5s infinite;
+    }
+
+  `;
+
+  assert.ok(two, 'result exists');
+  assert.ok(two.foo, 'class foo is exported');
+
+  const twoExpected = `
+
+    .foo_1PI20 {
+      animation: yolo_5Eq7W 5s infinite;
+    }
+
+  `;
+
+  assert.equal(getCss(two), twoExpected,
+    'class is scoped and animation imported correctly');
   assert.end();
 });
