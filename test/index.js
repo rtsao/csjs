@@ -2,11 +2,10 @@
 
 const test = require('tape');
 const csjs = require('../');
-const getCss = require('../get-css');
 
 test('basic template string functionality', function t(assert) {
   const result = csjs`#foo {color: red;}`;
-  assert.equal(getCss(result), '#foo {color: red;}', 'can retrieve basic css');
+  assert.equal(csjs.getCss(result), '#foo {color: red;}', 'can retrieve basic css');
   assert.end();
 });
 
@@ -38,17 +37,15 @@ test('multiple extensions', function t(assert) {
     .fob extends ${one.foo} {}
 
   `;
-  // TODO fix extra space?
   const twoExpected = `
 
-    .baz_3qXjB  {}
-    .fob_3qXjB  {}
+    .baz_3qXjB {}
+    .fob_3qXjB {}
 
   `;
 
-
   assert.ok(two, 'result exists');
-  assert.equal(getCss(two), twoExpected, 'scoped css matches');
+  assert.equal(csjs.getCss(two), twoExpected, 'scoped css matches');
   assert.ok(two.baz, 'baz has an extension');
   assert.equal(two.baz.className, 'baz_3qXjB bar_4d3PW foo_4d3PW',
     'baz extends both bar and foo');
@@ -71,7 +68,7 @@ test('keyframes scoping', function t(assert) {
   `;
 
   assert.ok(one.yolo, 'animation yolo is exported');
-  assert.equal(getCss(one), oneExpected, 'animation is scoped in css output');
+  assert.equal(csjs.getCss(one), oneExpected, 'animation is scoped in css output');
 
   const two = csjs`
 
@@ -92,7 +89,7 @@ test('keyframes scoping', function t(assert) {
 
   `;
 
-  assert.equal(getCss(two), twoExpected,
+  assert.equal(csjs.getCss(two), twoExpected,
     'class is scoped and animation imported correctly');
   assert.end();
 });
