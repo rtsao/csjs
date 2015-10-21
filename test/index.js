@@ -59,11 +59,19 @@ test('keyframes scoping', function t(assert) {
 
     @keyframes yolo {}
 
+    .foo {
+      animation: yolo 5s infinite;
+    }
+
   `;
 
   const oneExpected = `
 
-    @keyframes yolo_5Eq7W {}
+    @keyframes yolo_19Yy9 {}
+
+    .foo_19Yy9 {
+      animation: yolo_19Yy9 5s infinite;
+    }
 
   `;
 
@@ -83,8 +91,8 @@ test('keyframes scoping', function t(assert) {
 
   const twoExpected = `
 
-    .foo_1PI20 {
-      animation: yolo_5Eq7W 5s infinite;
+    .foo_699gk {
+      animation: yolo_19Yy9 5s infinite;
     }
 
   `;
