@@ -160,7 +160,7 @@ There is a browserify transform that will automaticaly inject your CSJS: [csjs-i
 
 ## Extracted static CSS bundles
 
-Soon there will be tooling that will allow you to extract out your application's CSJS into a static CSS file (rather than injecting styles at runtime).
+Coming soon is a browserify plugin that will allow you to extract out your application's CSJS into a static CSS file (rather than injecting styles at runtime).
 
 ## FAQ
 
