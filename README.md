@@ -1,7 +1,6 @@
 # CSJS (Cascading Style JavaScripts)
 
-## What is CSJS?
-CSJS allows you to write modular, scoped CSS with valid JavaScript.
+> CSJS allows you to write modular, scoped CSS with valid JavaScript.
 
 ## Goals and Features
 * 100% native JavaScript and vanilla CSS <sup>[(1)]</sup>
@@ -11,6 +10,57 @@ CSJS allows you to write modular, scoped CSS with valid JavaScript.
 * Scoped CSS via hashing of class names
 * Style composition via natural class composition mechanics already in CSS/HTML
 * Modular styles with explicit dependencies using native CommonJS/ES6 Modules
+
+## Quick Example
+
+**styles.js**
+```javascript
+const csjs = require('csjs');
+
+const green = '#33aa22';
+
+module.exports = csjs`
+
+  .foo {
+    border: 1px solid black;
+    background-color: ${green};
+  }
+  
+  .bar {
+    padding: 4px;
+    font-family: serif;
+    font-size: 15px;
+  }
+
+`;
+
+```
+
+**component.js**
+```javascript
+
+const React = require('react');
+const div = React.DOM.div;
+
+const {foo, bar} = require('./styles');
+
+module.exports = React.createClass({
+  render() {
+    return div({className: foo}, [
+      'hello world'
+      div({className: bar}, ['hi!'])
+    ]);
+  }
+});
+```
+
+**rendered html**
+```html
+<div class="foo_19Yy9">
+  hello world
+  <div class="bar_19Yy9">hi!</div>
+</div>
+```
 
 ## Native
 
@@ -56,7 +106,9 @@ One advantage is CSJS is valid JavaScript so it works without any extra tooling 
 
 ##### Why not Radium?
 
-Radium is cool, but there are limitations to using pure inline styles. Radium relies on wrapping React's render method to be able to re-implement things like psuedo-classes and media queries, which aren't possible with inline styles. These just work normally in CSJS because it is normal CSS. Pure inline styles makes a lot sense if you have lots of dynamic styles with runtime calculations, but there's no benefit in the case of static CSS if you can get scoping through other means.
+Inline styles are cool, but there are limitations to using pure inline styles. For example, things like pseudo-classes and media queries aren't possible with inline styles. Radium works around this by wrapping React's render method to be able to re-implement things like psuedo-classes and media queries. Thus Radium is wholly dependent on React. CSJS has no such dependency, and can work with any framework or vanilla JS.
+
+Pure inline styles makes a lot sense if you have lots of dynamic styles with runtime calculations, but there's no benefit in the case of static styles if you can get scoping through other means. If your styles are "static", using Radium involves unnecessary overhead.
 
 [(1)]: #native
 [(2)]: #extracted-static-css-bundles
