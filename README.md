@@ -130,7 +130,7 @@ module.exports = csjs`
 
 ```
 
-**button-styles.js**
+**component.js**
 ```javascript
 
 var buttonStyles = require('./button-styles');
