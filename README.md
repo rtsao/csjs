@@ -84,6 +84,80 @@ CSJS works with any framework, be it React, native Web Components, or something 
  * More powerful mixins
  * As extensible as JavaScript itself
 
+## Composition CSS Syntactic Sugar
+
+CSJS also includes an (optional) handy class composition syntactic sugar:
+
+**common-styles.js**
+```javascript
+const csjs = require('csjs');
+
+module.exports = csjs`
+
+  .foo {
+    border: 1px solid black;
+  }
+  
+  .bar {
+    padding: 4px;
+    font-family: serif;
+    font-size: 15px;
+  }
+
+`;
+
+```
+
+**button-styles.js**
+```javascript
+const csjs = require('csjs');
+
+const common = require('./common-styles');
+
+module.exports = csjs`
+
+  .button extends ${common.foo} {
+    background: #ccc;
+    border-radius: 4px;
+  }
+  
+  .superButton extends .button, ${common.bar} {
+    background: red;
+    font-weight: bold;
+  }
+
+`;
+
+```
+
+**button-styles.js**
+```javascript
+
+var buttonStyles = require('./button-styles');
+var getCss = require('csjs/get-css');
+
+buttonStyles.superButton;
+// => "foo_19Yy9 bar_19Yy9 button_4fdaQ superButton_4fdaQ"
+
+getCss(buttonStyles);
+/*
+  .button_4fdaQ {
+    background: #ccc;
+    border-radius: 4px;
+  }
+  
+  .superButton_4fdaQ {
+    background: red;
+    font-weight: bold;
+  }
+
+*/
+```
+
+## Automatic CSS injection
+
+There is a browserify transform that will automaticaly inject your CSJS: [csjs-injectify](https://github.com/rtsao/csjs-injectify). It is recommended to use this rather than the [csjs-inject](https://github.com/rtsao/csjs-inject) module directly.
+
 ## Extracted static CSS bundles
 
 Soon there will be tooling that will allow you to extract out your application's CSJS into a static CSS file (rather than injecting styles at runtime).
