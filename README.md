@@ -1,5 +1,9 @@
 # CSJS (Cascading Style JavaScripts)
 
+[![build status][build-badge]][build-href]
+[![coverage status][coverage-badge]][coverage-href]
+[![dependencies status][deps-badge]][deps-href]
+
 > CSJS allows you to write modular, scoped CSS with valid JavaScript.
 
 ## Goals and Features
@@ -187,3 +191,10 @@ Pure inline styles makes a lot sense if you have lots of dynamic styles with run
 [(1)]: #native
 [(2)]: #extracted-static-css-bundles
 [CSS Modules]: https://github.com/css-modules/css-modules
+
+[build-badge]: https://travis-ci.org/rtsao/csjs.svg?branch=master
+[build-href]: https://travis-ci.org/rtsao/csjs
+[coverage-badge]: https://coveralls.io/repos/rtsao/csjs/badge.svg?branch=master&service=github
+[coverage-href]: https://coveralls.io/github/rtsao/csjs?branch=master
+[deps-badge]: https://david-dm.org/rtsao/csjs.svg
+[deps-href]: https://david-dm.org/rtsao/csjs
