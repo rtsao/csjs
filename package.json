@@ -8,9 +8,13 @@
   "repository": "git@github.com:rtsao/csjs.git",
   "bugs": "https://github.com/rtsao/csjs/issues",
   "scripts": {
-    "test": "node test/index.js"
+    "test": "node test/index.js",
+    "cover": "istanbul cover test/index.js",
+    "travis-test": "npm run cover && ((cat coverage/lcov.info | coveralls) || exit 0)"
   },
   "devDependencies": {
+    "coveralls": "^2.11.4",
+    "istanbul": "^0.4.0",
     "tape": "^4.2.0"
   },
   "dependencies": {
