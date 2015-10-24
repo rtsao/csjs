@@ -188,6 +188,14 @@ Inline styles are cool, but there are limitations to using pure inline styles. F
 
 Pure inline styles makes a lot sense if you have lots of dynamic styles with runtime calculations, but there's no benefit in the case of static styles if you can get scoping through other means. If your styles are "static", using Radium involves unnecessary overhead.
 
+## See Also
+* https://github.com/rtsao/csjs-example-app
+* https://github.com/rtsao/csjs-injectify
+* https://github.com/rtsao/csjs-inject
+
+## License
+MIT
+
 [(1)]: #native
 [(2)]: #extracted-static-css-bundles
 [CSS Modules]: https://github.com/css-modules/css-modules
