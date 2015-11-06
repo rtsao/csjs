@@ -160,7 +160,7 @@ getCss(buttonStyles);
 
 ## Automatic CSS injection
 
-There is a browserify transform that will automaticaly inject your CSJS: [csjs-injectify](https://github.com/rtsao/csjs-injectify). It is recommended to use this rather than the [csjs-inject](https://github.com/rtsao/csjs-inject) module directly.
+There is a browserify transform that will automatically inject your CSJS: [csjs-injectify](https://github.com/rtsao/csjs-injectify). It is recommended to use this rather than the [csjs-inject](https://github.com/rtsao/csjs-inject) module directly.
 
 ## Extracted static CSS bundles
 
