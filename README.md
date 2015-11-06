@@ -6,14 +6,16 @@
 
 > CSJS allows you to write modular, scoped CSS with valid JavaScript.
 
-## Goals and Features
-* 100% native JavaScript and vanilla CSS <sup>[(1)]</sup>
+## Features
 * Extremely simple and lightweight
+* Leverages features in ES6 and vanilla CSS <sup>[(1)]</sup> rather than reinventing the wheel
+  * Powerful yet dead-simple variables/mixins in CSS using native ES6 template strings
+  * Modular styles with explicit dependencies using native CommonJS/ES6 Modules
+  * Style composition via natural class composition mechanics already in CSS/HTML
+* Works tooling-free; no required compilation/build steps <sup>[(2)]</sup>
 * Framework-agnostic (No React dependency; works with Web Components, etc.)
-* No required compilation/build steps <sup>[(2)]</sup>
-* Scoped CSS via hashing of class names
-* Style composition via natural class composition mechanics already in CSS/HTML
-* Modular styles with explicit dependencies using native CommonJS/ES6 Modules
+* Fully supported native CSS media queries, pseudo-classes, keyframe animations, etc.
+
 
 ## Quick Example
 
