@@ -12,7 +12,7 @@
   * Powerful yet dead-simple variables/mixins in CSS using native ES6 template strings
   * Modular styles with explicit dependencies using native CommonJS/ES6 Modules
   * Style composition via natural class composition mechanics already in CSS/HTML
-* Works tooling-free; no required compilation/build steps <sup>[(2)]</sup>
+* Works tooling-free; no required transpilation/compilation/build steps <sup>[(2)]</sup>
 * Framework-agnostic (No React dependency; works with Web Components, etc.)
 * Fully supported native CSS media queries, pseudo-classes, keyframe animations, etc.
 
@@ -70,7 +70,7 @@ module.exports = React.createClass({
 
 ### Simple, tooling-free
 
-CSJS runs in ES6 environments without compilation or build steps (including Node 4+, Latest stable Chrome/Firefox).
+CSJS runs in ES6 environments without transpilation, compilation, or build steps (including Node 4+, Latest stable Chrome/Firefox).
 
 ### Framework-agnostic
 
