@@ -68,20 +68,15 @@ module.exports = React.createClass({
 </div>
 ```
 
-## Native
+### Simple, tooling-free
 
 CSJS runs in ES6 environments without compilation or build steps (including Node 4+, Latest stable Chrome/Firefox).
 
-Writing CSJS is just like writing vanilla CSS with two exceptions:
-
-1. You may use JS in your CSS (just like any other ES6 template string!)
-2. CSJS introduces an optional `extends` keyword into your CSS which allows for extremely convenient class composition.
-
-## Framework-agnostic
+### Framework-agnostic
 
 CSJS works with any framework, be it React, native Web Components, or something else.
 
-## Full power of JavaScript in your CSS
+### Full power of JavaScript in your CSS
 
 * Real, full-fledged JavaScript
 * Obviates the need for Sass/LESS
@@ -90,9 +85,9 @@ CSJS works with any framework, be it React, native Web Components, or something 
  * More powerful mixins
  * As extensible as JavaScript itself
 
-## Composition CSS Syntactic Sugar
+### Class Composition CSS Syntax
 
-CSJS also includes an (optional) handy class composition syntactic sugar:
+CSJS also includes an (optional) handy class composition syntax:
 
 **common-styles.js**
 ```javascript
@@ -160,11 +155,13 @@ getCss(buttonStyles);
 */
 ```
 
-## Automatic CSS injection
+### Optional tooling
+
+#### Automatic CSS injection
 
 There is a browserify transform that will automatically inject your CSJS: [csjs-injectify](https://github.com/rtsao/csjs-injectify). It is recommended to use this rather than the [csjs-inject](https://github.com/rtsao/csjs-inject) module directly.
 
-## Extracted static CSS bundles
+#### Extracted static CSS bundles
 
 Coming soon is a browserify plugin that will allow you to extract out your application's CSJS into a static CSS file (rather than injecting styles at runtime).
 
@@ -198,7 +195,7 @@ Pure inline styles makes a lot sense if you have lots of dynamic styles with run
 ## License
 MIT
 
-[(1)]: #native
+[(1)]: #simple-tooling-free
 [(2)]: #extracted-static-css-bundles
 [CSS Modules]: https://github.com/css-modules/css-modules
 
