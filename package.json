@@ -18,7 +18,8 @@
     "tape": "^4.2.0"
   },
   "dependencies": {
-    "base-x": "^1.0.1"
+    "base62": "^1.1.0",
+    "string-hash": "^1.1.0"
   },
   "engines": {
     "node": "^4.0.0"

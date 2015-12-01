@@ -19,7 +19,7 @@ test('basic scoping functionality', function t(assert) {
 
   assert.ok(result, 'result exists');
   assert.ok(result.bar, 'bar has an extension');
-  assert.equal(result.bar.className, 'bar_4d3PW foo_4d3PW', 'bar extends foo');
+  assert.equal(result.bar.className, 'bar_1k1sUd foo_1k1sUd', 'bar extends foo');
   assert.end();
 });
 
@@ -39,17 +39,17 @@ test('multiple extensions', function t(assert) {
   `;
   const twoExpected = `
 
-    .baz_3qXjB {}
-    .fob_3qXjB {}
+    .baz_4CfzAa {}
+    .fob_4CfzAa {}
 
   `;
 
   assert.ok(two, 'result exists');
   assert.equal(csjs.getCss(two), twoExpected, 'scoped css matches');
   assert.ok(two.baz, 'baz has an extension');
-  assert.equal(two.baz.className, 'baz_3qXjB bar_4d3PW foo_4d3PW',
+  assert.equal(two.baz.className, 'baz_4CfzAa bar_1k1sUd foo_1k1sUd',
     'baz extends both bar and foo');
-  assert.equal(two.fob.className, 'fob_3qXjB foo_4d3PW',
+  assert.equal(two.fob.className, 'fob_4CfzAa foo_1k1sUd',
     'fob extends foo');
   assert.end();
 });
@@ -67,10 +67,10 @@ test('keyframes scoping', function t(assert) {
 
   const oneExpected = `
 
-    @keyframes yolo_19Yy9 {}
+    @keyframes yolo_2WD5WP {}
 
-    .foo_19Yy9 {
-      animation: yolo_19Yy9 5s infinite;
+    .foo_2WD5WP {
+      animation: yolo_2WD5WP 5s infinite;
     }
 
   `;
@@ -91,8 +91,8 @@ test('keyframes scoping', function t(assert) {
 
   const twoExpected = `
 
-    .foo_699gk {
-      animation: yolo_19Yy9 5s infinite;
+    .foo_4g9VPD {
+      animation: yolo_2WD5WP 5s infinite;
     }
 
   `;
