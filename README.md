@@ -83,7 +83,7 @@ CSJS works with any framework, be it React, native Web Components, or something 
 ### Full power of JavaScript in your CSS
 
 * Real, full-fledged JavaScript
-* Obviates the need for Sass/LESS
+* Obviates the need for Sass/Less or other preprocessors
  * Proper imports/require
  * Real variables, functions, loops, etc.
  * As extensible as JavaScript itself
@@ -176,19 +176,19 @@ CSJS is 100% valid JavaScript, hence the name Cascading Style JavaScripts.
 
 ##### Why not Sass?
 
-Sass doesn't provide any way to scope CSS, thus encapsulation of styles in components isn't possible with Sass alone. Additionally, because Sass was designed for use in a global CSS namespace, many of its features just don't make sense when styles are scoped and encapsulated in components. `@extend` in Sass is extremely problematic, whereas CSJS has a proper mechanism for class composition that actually works like it should. Furthermore, with CSJS you have the ability to use real JavaScript in CSS, which is significantly more powerful and extensible than the language features included in Sass, so there's no need to use Sass at all.
+Sass doesn't provide any way to scope CSS, thus encapsulation of styles in components isn't possible with Sass alone. Additionally, because Sass was designed for use in a global CSS namespace, many of its features just don't make sense when styles are scoped and encapsulated in components. `@extend` in Sass is extremely problematic, whereas CSJS has a proper mechanism for class composition that actually works like it should. Furthermore, with CSJS, you have the ability to use real JavaScript in CSS, which is significantly more powerful and extensible than the language features included in Sass, so there's not really any reason to use Sass at all.
 
 ##### Why not CSS Modules?
 
 CSJS was inspired by [CSS Modules] and they are virtually identical in concept. However, the key difference is CSS Modules attempts to reproduce an ES6-style module system into your CSS, whereas CSJS simply uses native JS modules and provides a convenient way to write scoped, modular CSS.
 
-One advantage is CSJS is valid JavaScript so it works without any extra tooling (CSS Modules is not valid CSS). Also, because of CSJS merely reuses the native module system and standard ES6 tagged template strings, it is extremely lightweight.
+One advantage is CSJS is valid JavaScript so it works without any extra tooling (CSS Modules is not valid CSS). Also, because CSJS is plain JavaScript and CSS, you don't have to learn any new syntax or semantics.
 
 ##### Why not Radium?
 
-Inline styles are cool, but there are limitations to using pure inline styles. For example, things like pseudo-classes and media queries aren't possible with inline styles. Radium works around this by wrapping React's render method to be able to re-implement things like psuedo-classes and media queries. Thus Radium is wholly dependent on React. CSJS has no such dependency, and can work with any framework or vanilla JS.
+Inline styles are cool, but there are limitations to using pure inline styles. For example, things like pseudo-classes and media queries aren't possible with inline styles. Radium works around this by re-implementing them with JavaScript via wrapping React's render method. Thus Radium is wholly dependent on React. CSJS has no such dependency, and can work with any framework or vanilla JS. Furthermore, these JavaScript re-implementations of media queries and pseudo-classes are slower than the native CSS implementations you can use with CSJS.
 
-Pure inline styles makes a lot sense if you have lots of dynamic styles with runtime calculations, but there's no benefit in the case of static styles if you can get scoping through other means. If your styles are "static", using Radium involves unnecessary overhead.
+Pure inline styles makes a lot sense if you have lots of dynamic styles with runtime calculations, but there's no benefit if your styles are static and you can get scoping through other means.
 
 ## See Also
 * https://github.com/rtsao/csjs-example-app
