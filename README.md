@@ -70,9 +70,11 @@ module.exports = React.createClass({
 
 ### Simple, tooling-free
 
-CSJS runs in ES6 environments without transpilation, compilation, or build steps (including Node 4+, Latest stable Chrome/Firefox).
+CSJS runs in ES6 environments without transpilation, compilation, or build steps (including Node 4+ and latest stable Chrome/Firefox/Safari/Edge).
 
 [![sauce labs test status][sauce-badge]][sauce-href]
+
+Of course, you can always use Babel to transpile ES6 template strings and polyfill ES6 symbols, allowing you to use CSJS in any browser.
 
 ### Framework-agnostic
 
