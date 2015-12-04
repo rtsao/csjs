@@ -198,7 +198,7 @@ MIT
 [(1)]: #simple-tooling-free
 [(2)]: #extracted-static-css-bundles
 [CSS Modules]: https://github.com/css-modules/css-modules
-[bundle]: https://www.brcdn.org/csjs/latest?uglify=true
+[bundle]: https://www.brcdn.org/csjs/latest?standalone=csjs&uglify=true
 
 [build-badge]: https://travis-ci.org/rtsao/csjs.svg?branch=master
 [build-href]: https://travis-ci.org/rtsao/csjs
