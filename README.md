@@ -72,6 +72,8 @@ module.exports = React.createClass({
 
 CSJS runs in ES6 environments without transpilation, compilation, or build steps (including Node 4+, Latest stable Chrome/Firefox).
 
+[![sauce labs test status][sauce-badge]][sauce-href]
+
 ### Framework-agnostic
 
 CSJS works with any framework, be it React, native Web Components, or something else.
@@ -206,3 +208,5 @@ MIT
 [coverage-href]: https://coveralls.io/github/rtsao/csjs?branch=master
 [deps-badge]: https://david-dm.org/rtsao/csjs.svg
 [deps-href]: https://david-dm.org/rtsao/csjs
+[sauce-badge]: https://saucelabs.com/browser-matrix/csjs.svg
+[sauce-href]: https://saucelabs.com/u/csjs
