@@ -84,9 +84,8 @@ CSJS works with any framework, be it React, native Web Components, or something 
 
 * Real, full-fledged JavaScript
 * Obviates the need for Sass/LESS
- * Real variables
- * Real imports/require
- * More powerful mixins
+ * Proper imports/require
+ * Real variables, functions, loops, etc.
  * As extensible as JavaScript itself
 
 ### Class Composition CSS Syntax
