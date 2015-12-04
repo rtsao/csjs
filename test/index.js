@@ -19,7 +19,7 @@ test('basic scoping functionality', function t(assert) {
 
   assert.ok(result, 'result exists');
   assert.ok(result.bar, 'bar has an extension');
-  assert.equal(result.bar.className, 'bar_1k1sUd foo_1k1sUd', 'bar extends foo');
+  assert.ok(result.bar == 'bar_1k1sUd foo_1k1sUd', 'bar extends foo');
   assert.end();
 });
 
@@ -47,9 +47,9 @@ test('multiple extensions', function t(assert) {
   assert.ok(two, 'result exists');
   assert.equal(csjs.getCss(two), twoExpected, 'scoped css matches');
   assert.ok(two.baz, 'baz has an extension');
-  assert.equal(two.baz.className, 'baz_4CfzAa bar_1k1sUd foo_1k1sUd',
+  assert.ok(two.baz == 'baz_4CfzAa bar_1k1sUd foo_1k1sUd',
     'baz extends both bar and foo');
-  assert.equal(two.fob.className, 'fob_4CfzAa foo_1k1sUd',
+  assert.ok(two.fob == 'fob_4CfzAa foo_1k1sUd',
     'fob extends foo');
   assert.end();
 });
@@ -76,6 +76,7 @@ test('keyframes scoping', function t(assert) {
   `;
 
   assert.ok(one.yolo, 'animation yolo is exported');
+  assert.ok(one.yolo == 'yolo_2WD5WP', 'animation yolo name matches expected');
   assert.equal(csjs.getCss(one), oneExpected, 'animation is scoped in css output');
 
   var two = csjs`
@@ -88,6 +89,7 @@ test('keyframes scoping', function t(assert) {
 
   assert.ok(two, 'result exists');
   assert.ok(two.foo, 'class foo is exported');
+  assert.ok(two.foo == 'foo_4g9VPD', 'class foo matches expected');
 
   var twoExpected = `
 
