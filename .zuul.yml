@@ -6,3 +6,5 @@ browsers:
     version: latest
   - name: safari
     version: latest
+  - name: iphone
+    version: latest
