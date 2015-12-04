@@ -173,7 +173,7 @@ Coming soon is a browserify plugin that will allow you to extract out your appli
 
 ##### Why the name CSJS?
 
-CSJS files are valid JavaScript, hence the name Cascading Style JavaScripts.
+CSJS is 100% valid JavaScript, hence the name Cascading Style JavaScripts.
 
 ##### Why not Sass?
 
