@@ -10,12 +10,13 @@
   "scripts": {
     "test": "node test/index.js",
     "cover": "istanbul cover test/index.js",
-    "travis-test": "npm run cover && ((cat coverage/lcov.info | coveralls) || exit 0)"
+    "travis-test": "npm run cover && ((cat coverage/lcov.info | coveralls) || exit 0) && zuul -- test/index.js"
   },
   "devDependencies": {
     "coveralls": "^2.11.4",
     "istanbul": "^0.4.0",
-    "tape": "^4.2.0"
+    "tape": "^4.2.0",
+    "zuul": "^3.8.0"
   },
   "dependencies": {
     "base62": "^1.1.0",
