@@ -8,14 +8,14 @@
 
 ## Features
 * Extremely simple and lightweight
-* Leverages features in ES6 and vanilla CSS <sup>[(1)]</sup> rather than reinventing the wheel
+  * [~2KB browserified, minified, and gzipped][bundle]
+* Leverages native ES6 and CSS features <sup>[(1)]</sup> rather than reinventing the wheel
   * Powerful yet dead-simple variables/mixins in CSS using native ES6 template strings
   * Modular styles with explicit dependencies using native CommonJS/ES6 Modules
   * Style composition via natural class composition mechanics already in CSS/HTML
 * Works tooling-free; no required transpilation/compilation/build steps <sup>[(2)]</sup>
 * Framework-agnostic (No React dependency; works with Web Components, etc.)
 * Fully supported native CSS media queries, pseudo-classes, keyframe animations, etc.
-
 
 ## Quick Example
 
@@ -198,6 +198,7 @@ MIT
 [(1)]: #simple-tooling-free
 [(2)]: #extracted-static-css-bundles
 [CSS Modules]: https://github.com/css-modules/css-modules
+[bundle]: https://www.brcdn.org/csjs/latest?uglify=true
 
 [build-badge]: https://travis-ci.org/rtsao/csjs.svg?branch=master
 [build-href]: https://travis-ci.org/rtsao/csjs
