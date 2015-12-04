@@ -1,16 +1,16 @@
 'use strict';
 
-const test = require('tape');
-const csjs = require('../');
+var test = require('tape');
+var csjs = require('../');
 
 test('basic template string functionality', function t(assert) {
-  const result = csjs`#foo {color: red;}`;
+  var result = csjs`#foo {color: red;}`;
   assert.equal(csjs.getCss(result), '#foo {color: red;}', 'can retrieve basic css');
   assert.end();
 });
 
 test('basic scoping functionality', function t(assert) {
-  const result = csjs`
+  var result = csjs`
 
     .foo {}
     .bar extends .foo {}
@@ -24,20 +24,20 @@ test('basic scoping functionality', function t(assert) {
 });
 
 test('multiple extensions', function t(assert) {
-  const one = csjs`
+  var one = csjs`
 
     .foo {}
     .bar extends .foo {}
 
   `;
 
-  const two = csjs`
+  var two = csjs`
 
     .baz extends ${one.bar} {}
     .fob extends ${one.foo} {}
 
   `;
-  const twoExpected = `
+  var twoExpected = `
 
     .baz_4CfzAa {}
     .fob_4CfzAa {}
@@ -55,7 +55,7 @@ test('multiple extensions', function t(assert) {
 });
 
 test('keyframes scoping', function t(assert) {
-  const one = csjs`
+  var one = csjs`
 
     @keyframes yolo {}
 
@@ -65,7 +65,7 @@ test('keyframes scoping', function t(assert) {
 
   `;
 
-  const oneExpected = `
+  var oneExpected = `
 
     @keyframes yolo_2WD5WP {}
 
@@ -78,7 +78,7 @@ test('keyframes scoping', function t(assert) {
   assert.ok(one.yolo, 'animation yolo is exported');
   assert.equal(csjs.getCss(one), oneExpected, 'animation is scoped in css output');
 
-  const two = csjs`
+  var two = csjs`
 
     .foo {
       animation: ${one.yolo} 5s infinite;
@@ -89,7 +89,7 @@ test('keyframes scoping', function t(assert) {
   assert.ok(two, 'result exists');
   assert.ok(two.foo, 'class foo is exported');
 
-  const twoExpected = `
+  var twoExpected = `
 
     .foo_4g9VPD {
       animation: yolo_2WD5WP 5s infinite;
