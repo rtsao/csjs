@@ -11,7 +11,7 @@
   * [~2KB browserified, minified, and gzipped][bundle]
 * Leverages native ES6 and CSS features <sup>[(1)]</sup> rather than reinventing the wheel
   * Seamless scoped styles and dead-simple variables/mixins using tagged ES6 template strings
-  * Modular styles with explicit dependencies using native CommonJS/ES6 Modules
+  * Modular styles with explicit dependencies powered by native CommonJS/ES6 modules
   * Style composition via natural class composition mechanics already in CSS/HTML
 * Works tooling-free; no required transpilation/compilation/build steps <sup>[(2)]</sup>
 * Framework-agnostic (No React dependency; works with Web Components, etc.)
@@ -186,7 +186,9 @@ One advantage is CSJS is valid JavaScript so it works without any extra tooling 
 
 ##### Why not Radium?
 
-Inline styles are cool, but there are limitations to using pure inline styles. For example, pseudo-classes and media queries aren't possible with inline styles. Radium works around this by re-implementing them with JavaScript. Radium hooks into  React's render method and is thus wholly dependent on React. CSJS has no such dependency and works regardless of framework ( or lack therof). Furthermore, because CSJS allows you to use native media queries and psuedo-classes, there's no performance tradeoff (unlike the JavaScript/React re-implementations in Radium).
+Inline styles are cool, but there are limitations to using pure inline styles. For example, CSS pseudo-classes and media queries aren't possible with inline styles. This is the premise behind Radium, which works around this by re-implementing these CSS features using JavaScript.
+
+Whereas Radium is wholly dependent on React and involves performance tradeoffs in its JavaScript implementations of CSS features, CSJS works regardless of framework (or lack therof) and allows for the use of all CSS features natively (including media queries and psuedo-classes).
 
 ## See Also
 * https://github.com/rtsao/csjs-example-app
