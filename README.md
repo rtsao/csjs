@@ -8,7 +8,7 @@
 
 ## Features
 * Extremely simple and lightweight
-  * [~2KB browserified, minified, and gzipped][bundle]
+  * Zero dependencies, [~2KB browserified, minified, and gzipped][bundle]
 * Leverages native ES6 and CSS features <sup>[(1)]</sup> rather than reinventing the wheel
   * Seamless scoped styles and dead-simple variables/mixins using tagged ES6 template strings
   * Modular styles with explicit dependencies powered by native CommonJS/ES6 modules
