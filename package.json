@@ -12,15 +12,12 @@
     "cover": "istanbul cover test/index.js",
     "travis-test": "npm run cover && ((cat coverage/lcov.info | coveralls) || exit 0) && zuul -- test/index.js"
   },
+  "dependencies": {},
   "devDependencies": {
     "coveralls": "^2.11.4",
     "istanbul": "^0.4.0",
     "tape": "^4.2.0",
     "zuul": "^3.8.0"
-  },
-  "dependencies": {
-    "base62": "^1.1.0",
-    "string-hash": "^1.1.0"
   },
   "engines": {
     "node": "^4.0.0"
