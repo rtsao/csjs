@@ -188,7 +188,7 @@ One advantage is CSJS is valid JavaScript so it works without any extra tooling 
 
 Inline styles are cool, but there are limitations to using pure inline styles. For example, CSS pseudo-classes and media queries aren't possible with inline styles. This is the premise behind Radium, which works around this by re-implementing these CSS features using JavaScript.
 
-Whereas Radium is wholly dependent on React and involves performance tradeoffs in its JavaScript implementations of CSS features, CSJS works regardless of framework (or lack therof) and allows for the use of all CSS features natively (including media queries and psuedo-classes).
+Whereas Radium is wholly dependent on React and involves performance tradeoffs in its JavaScript implementations of CSS features, CSJS works regardless of framework (or lack thereof) and allows for the use of all CSS features natively (including media queries and pseudo-classes).
 
 ## See Also
 * https://github.com/rtsao/csjs-example-app
