@@ -103,3 +103,20 @@ test('keyframes scoping', function t(assert) {
     'class is scoped and animation imported correctly');
   assert.end();
 });
+
+test('css with periods in property value', function t(assert) {
+  var one = csjs`.foo { width: 10.5em; }`;
+  var oneExpected = '.foo_3k8AmW { width: 10.5em; }';
+  assert.equal(csjs.getCss(one), oneExpected,
+    'can parse css with periods in property value'
+  );
+
+  var two = csjs`.foo { width: 10.5em; } .bar { width: 11.5em; }`;
+  var twoExpected = '.foo_Olt0D { width: 10.5em; } .bar_Olt0D { width: 11.5em; }';
+  assert.equal(
+    csjs.getCss(two), twoExpected,
+    'can parse multiple css rules on one one line with periods in property values'
+  );
+
+  assert.end();
+});
