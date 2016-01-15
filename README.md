@@ -194,6 +194,7 @@ Whereas Radium is wholly dependent on React and involves performance tradeoffs i
 * https://github.com/rtsao/csjs-example-app
 * https://github.com/rtsao/csjs-injectify
 * https://github.com/rtsao/csjs-inject
+* https://github.com/rtsao/scope-styles
 
 ## License
 MIT
