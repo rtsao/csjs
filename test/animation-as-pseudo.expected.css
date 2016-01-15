@@ -1,0 +1,13 @@
+
+
+  @keyframes hover_zz7qS {
+    0%   { opacity: 0.0; }
+    100% { opacity: 0.5; }
+  }
+
+  @media (max-width: 480px) {
+    .animation_zz7qS:hover {
+      background: green;
+    }
+  }
+
