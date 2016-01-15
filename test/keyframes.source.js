@@ -7,4 +7,8 @@ module.exports = csjs`
     100% { opacity: 1; }
   }
 
+  .foo {
+    animation: yolo 5s infinite;
+  }
+
 `;

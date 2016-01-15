@@ -1,7 +1,11 @@
 
 
-  @keyframes yolo_1LJgsl {
+  @keyframes yolo_2OKdOh {
     0%   { opacity: 0; }
     100% { opacity: 1; }
+  }
+
+  .foo_2OKdOh {
+    animation: yolo_2OKdOh 5s infinite;
   }
 
