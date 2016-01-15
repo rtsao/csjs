@@ -1,0 +1,12 @@
+
+
+  .foo_nYfJE {
+    color: red;
+  }
+
+  @media (max-width: 480px) {
+    .foo_nYfJE {
+      color: blue;
+    }
+  }
+
