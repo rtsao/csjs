@@ -14,7 +14,12 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "brfs": "^1.4.2",
+    "bulk-require": "^0.2.1",
+    "bulkify": "^1.1.1",
     "coveralls": "^2.11.4",
+    "folderify": "https://github.com/rtsao/folderify/tarball/patch-1",
+    "include-folder": "^1.0.0",
     "istanbul": "^0.4.0",
     "tape": "^4.2.0",
     "zuul": "^3.8.0"

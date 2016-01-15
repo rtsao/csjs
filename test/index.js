@@ -4,6 +4,9 @@ var fs = require('fs');
 var path = require('path');
 var test = require('tape');
 
+var includeFolder = require('include-folder');
+var bulk = require('bulk-require');
+
 var csjs = require('../');
 
 var extensions = {
@@ -12,10 +15,21 @@ var extensions = {
   css: '.expected.css'
 };
 
+var testFiles = fs.readdirSync('test');
+
+var required = bulk(__dirname, [
+  '*.source.js',
+  '*.expected.json'
+]);
+
+var cssFiles = includeFolder('./test', /expected\.css$/, {
+  preserveFilenames: true
+});
+
 var fixtureRegex = new RegExp(extensions.source + '$');
 var matchesFixture = fixtureRegex.test.bind(fixtureRegex);
 
-var tests = fs.readdirSync('test')
+var tests = testFiles
   .filter(matchesFixture)
   .map(function toName(file) {
     return path.basename(file, extensions.source);
@@ -37,15 +51,15 @@ function runTest(name, result, expected) {
 }
 
 function getFixtures(name) {
-  var sourcePath = fixturePath(name, extensions.source);
-  var jsonPath = fixturePath(name, extensions.json);
-  var cssPath = fixturePath(name, extensions.css);
+  var sourcePath = name + '.source';
+  var jsonPath = name + '.expected';
+  var cssPath = name + extensions.css;
 
   return {
-    result: require(sourcePath),
+    result: required[sourcePath],
     expected: {
-      json: require(jsonPath),
-      css: fs.readFileSync(cssPath, 'utf8')
+      json: required[jsonPath],
+      css: cssFiles[cssPath]
     }
   }
 }

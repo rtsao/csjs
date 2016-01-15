@@ -10,3 +10,7 @@ browsers:
     version: latest
   - name: microsoftedge
     version: latest
+browserify:
+  - transform: bulkify
+  - transform: brfs
+  - transform: folderify
