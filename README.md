@@ -1,4 +1,4 @@
-# CSJS (Cascading Style JavaScripts)
+# [![CSJS logo](https://cdn.rawgit.com/rtsao/csjs/logo/logo.svg "CSJS (Cascading Style JavaScripts)")](https://github.com/rtsao/csjs)
 
 [![build status][build-badge]][build-href]
 [![coverage status][coverage-badge]][coverage-href]
