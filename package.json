@@ -30,7 +30,7 @@
     "zuul": "^3.8.0"
   },
   "engines": {
-    "node": "^4.0.0"
+    "node": ">=4.0.0"
   },
   "license": "MIT"
 }
