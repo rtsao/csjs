@@ -10,4 +10,8 @@ module.exports = csjs`
     background: blue;
   }
 
+  .baz extends .bar {
+    text-transform: uppercase;
+  }
+
 `;
