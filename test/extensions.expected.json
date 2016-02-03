@@ -1,4 +1,5 @@
 {
-  "foo": "foo_8xHNL",
-  "bar": "bar_8xHNL foo_8xHNL"
+  "foo": "foo_1aWxTX",
+  "bar": "bar_1aWxTX foo_1aWxTX",
+  "baz": "baz_1aWxTX bar_1aWxTX foo_1aWxTX"
 }
