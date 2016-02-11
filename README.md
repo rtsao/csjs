@@ -8,7 +8,7 @@
 
 ## Features
 * Extremely simple and lightweight
-  * Zero dependencies, [~2KB browserified, minified, and gzipped][bundle]
+  * Zero dependencies, [~2KB minified and gzipped][bundle]
 * Leverages native ES6 and CSS features <sup>[(1)]</sup> rather than reinventing the wheel
   * Seamless scoped styles and dead-simple variables/mixins using tagged ES6 template strings
   * Modular styles with explicit dependencies powered by native CommonJS/ES6 modules
@@ -19,53 +19,50 @@
 
 ## Quick Example
 
-**styles.js**
 ```javascript
 const csjs = require('csjs');
+const ReactDOM = require('react-dom/server');
+const {div, h1} = require('react').DOM;
 
 const green = '#33aa22';
 
-module.exports = csjs`
+const styles = csjs`
 
-  .foo {
+  .panel {
     border: 1px solid black;
     background-color: ${green};
   }
   
-  .bar {
+  .title {
     padding: 4px;
-    font-family: serif;
     font-size: 15px;
   }
 
 `;
 
-```
-
-**component.js**
-```javascript
-
-const React = require('react');
-const div = React.DOM.div;
-
-const {foo, bar} = require('./styles');
-
-module.exports = React.createClass({
-  render() {
-    return div({className: foo}, [
-      'hello world'
-      div({className: bar}, ['hi!'])
-    ]);
-  }
-});
-```
-
-**rendered html**
-```html
-<div class="foo_19Yy9">
-  hello world
-  <div class="bar_19Yy9">hi!</div>
+const html = ReactDOM.renderToStaticMarkup(
+  div({className: styles.panel}, [ 
+    h1({className: styles.title}, 'Hello World!')
+  ])
+);
+/*
+<div class="panel_4EC9fB">
+  <h1 class="title_4EC9fB">Hello World!</h1>
 </div>
+*/
+
+const css = require('csjs/get-css')(styles);
+/*
+.panel_4EC9fB {
+  border: 1px solid black;
+  background-color: #33aa22;
+}
+
+.title_4EC9fB {
+  padding: 4px;
+  font-size: 15px;
+}
+*/
 ```
 
 ### Simple, tooling-free
@@ -199,8 +196,8 @@ Whereas Radium is wholly dependent on React and involves performance tradeoffs i
 ## License
 MIT
 
-[(1)]: #simple-tooling-free
-[(2)]: #extracted-static-css-bundles
+[(1)]: #full-power-of-javascript-in-your-css
+[(2)]: #simple-tooling-free
 [CSS Modules]: https://github.com/css-modules/css-modules
 [bundle]: https://www.brcdn.org/csjs/latest?standalone=csjs&uglify=true
 
