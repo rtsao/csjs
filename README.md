@@ -157,13 +157,14 @@ getCss(buttonStyles);
 
 ### Optional tooling
 
-#### Automatic CSS injection
-
-There is a browserify transform that will automatically inject your CSJS: [csjs-injectify](https://github.com/rtsao/csjs-injectify). It is recommended to use this rather than the [csjs-inject](https://github.com/rtsao/csjs-inject) module directly.
-
 #### Extracted static CSS bundles
 
-Coming soon is a browserify plugin that will allow you to extract out your application's CSJS into a static CSS file (rather than injecting styles at runtime).
+[csjs-extractify](https://github.com/rtsao/csjs-extractify) is a browserify plugin that will allow you to extract your application's CSJS into a static CSS file at build time.
+
+#### Automatic CSS injection
+
+[csjs-injectify](https://github.com/rtsao/csjs-injectify) is a browserify transform that will automatically inject your scoped CSS into the `<head>`. It is recommended to use this rather than the [csjs-inject](https://github.com/rtsao/csjs-inject) module directly.
+
 
 ## FAQ
 
@@ -189,6 +190,7 @@ Whereas Radium is wholly dependent on React and involves performance tradeoffs i
 
 ## See Also
 * https://github.com/rtsao/csjs-example-app
+* https://github.com/rtsao/csjs-extractify
 * https://github.com/rtsao/csjs-injectify
 * https://github.com/rtsao/csjs-inject
 * https://github.com/rtsao/scope-styles
