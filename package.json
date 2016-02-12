@@ -3,9 +3,10 @@
   "version": "1.0.0-beta.1",
   "description": "Cascading Style JavaScripts",
   "keywords": [
-    "scoped",
-    "css",
-    "modules"
+    "csjs",
+    "css-modules",
+    "scoped-css",
+    "css"
   ],
   "author": "Ryan Tsao <ryan.j.tsao@gmail.com>",
   "main": "index.js",
