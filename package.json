@@ -16,7 +16,8 @@
   "scripts": {
     "test": "node test/index.js",
     "cover": "istanbul cover test/index.js",
-    "travis-test": "npm run cover && ((cat coverage/lcov.info | coveralls) || exit 0) && zuul -- test/index.js"
+    "travis-test": "npm run cover && ((cat coverage/lcov.info | coveralls) || exit 0)",
+    "travis-test-browser": "zuul -- test/index.js"
   },
   "dependencies": {},
   "devDependencies": {
