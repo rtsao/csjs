@@ -34,4 +34,8 @@ module.exports = csjs`
     animation-name: bam;
   } */
 
+  /* .hmm {
+    animation-name: wow;
+  } */
+
 `;
