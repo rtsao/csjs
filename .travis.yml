@@ -1,7 +1,7 @@
 language: node_js
 node_js:
 - '4.3'
-script: npm run travis-test && [ "${TRAVIS_PULL_REQUEST}" = "false" ] && npm run travis-test-browser
+script: npm run travis-test && ([ "${TRAVIS_PULL_REQUEST}" = "false" ] || exit 0) && npm run travis-test-browser
 env:
   global:
   - secure: API1krUNaYB5ixJXZoNBKyEmyMqzAvfu/YG6DrVK69ITDCvg2RDbWkv9xm17DTWhX4htczvY0YPs1MX6NNJLwLdTOl3aelGXrbdJt0pGmOYg0KnNuw3hexCwm0std35iT2YOlF7Y5AwVLM5x3tqoPMIuc5WG5MVQoQXJ8yI7YbS2nqA5t9RaO9juaTiQeYTdNhJWMXn0LsFzay42HTi60jf0OQPjZsKYSseLYjsm/J7DU5TkMGed9UDIj8e4qf8CajHEOEUMHX1ZtU6L4TvX4y5H/5Ut5ACg7Fkh1Ojgc2NTb2fAdDrnU3DhpVo/DMhoJ+PYRSBU6+OtJaLuJgdOlg7ekShxMoYz9Y2iDnjiA6gs9/LLgMox3e5SNi7zZkpx0Q+7CtpRD19M4pVsw4EUHLKxuCBFCjwOb9/xGRnf0ow0gLjENPQ2K3XAxpwUtGH9EHO3APOUwBnaLGsz7bjuyrI1igMya/Az/Gzfj+L28dehXWVMK+AwnKwEJw4wvaZpiM0dKfgBFUVzA6/ujmKcwaQ/VgbR2+F0JkBboXCKkHXRItRzDvl44iJETMgkOZNZbQYJXzplqEDgPQ1XJPeg5f34YCuy24ask/CAkOIiEpsN9PJOHyLcWfZ/pX1SZq/NyJcMWXGZUSE/2kwJblLk0FlPZI0TCHxZqz7ALJenZ6E=
