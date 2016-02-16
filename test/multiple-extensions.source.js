@@ -4,7 +4,11 @@ const external = require('./extensions.source');
 
 module.exports = csjs`
 
-  .baz extends ${external.bar} {
+  .lol {
+    font-family: serif;
+  }
+
+  .baz extends .lol, ${external.bar} {
     font-size: 12px;
   }
 
