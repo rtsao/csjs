@@ -18,7 +18,7 @@
 * Fully supported native CSS media queries, pseudo-classes, keyframe animations, etc.
 
 ## Quick Example
-
+([Live editable codepen.io demo](http://codepen.io/rtsao/pen/jWRJZj?editors=0010))
 ```javascript
 const csjs = require('csjs');
 const {div, h1} = require('react').DOM;
@@ -45,19 +45,19 @@ const html = require('react-dom/server').renderToStaticMarkup(
   ])
 );
 /*
-<div class="panel_4EC9fB">
-  <h1 class="title_4EC9fB">Hello World!</h1>
+<div class="panel_4Eda43">
+  <h1 class="title_4Eda43">Hello World!</h1>
 </div>
 */
 
 const css = csjs.getCss(styles);
 /*
-.panel_4EC9fB {
+.panel_4Eda43 {
   border: 1px solid black;
   background-color: #33aa22;
 }
 
-.title_4EC9fB {
+.title_4Eda43 {
   padding: 4px;
   font-size: 15px;
 }
