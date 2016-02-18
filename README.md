@@ -21,7 +21,6 @@
 
 ```javascript
 const csjs = require('csjs');
-const ReactDOM = require('react-dom/server');
 const {div, h1} = require('react').DOM;
 
 const green = '#33aa22';
@@ -32,7 +31,7 @@ const styles = csjs`
     border: 1px solid black;
     background-color: ${green};
   }
-  
+
   .title {
     padding: 4px;
     font-size: 15px;
@@ -40,7 +39,7 @@ const styles = csjs`
 
 `;
 
-const html = ReactDOM.renderToStaticMarkup(
+const html = require('react-dom/server').renderToStaticMarkup(
   div({className: styles.panel}, [ 
     h1({className: styles.title}, 'Hello World!')
   ])
@@ -51,7 +50,7 @@ const html = ReactDOM.renderToStaticMarkup(
 </div>
 */
 
-const css = require('csjs/get-css')(styles);
+const css = csjs.getCss(styles);
 /*
 .panel_4EC9fB {
   border: 1px solid black;
@@ -71,7 +70,7 @@ CSJS runs in ES6 environments without transpilation, compilation, or build steps
 
 [![sauce labs test status][sauce-badge]][sauce-href]
 
-Of course, you can always use Babel to transpile ES6 template strings, allowing you to use CSJS in any ES5 environment.
+Of course, you can always transpile ES6 template strings using Babel, allowing you to use CSJS in any ES5 environment.
 
 ### Framework-agnostic
 
@@ -85,9 +84,9 @@ CSJS works with any framework, be it React, native Web Components, or something 
  * Real variables, functions, loops, etc.
  * As extensible as JavaScript itself
 
-### Class Composition CSS Syntax
+### Class Composition Syntax
 
-CSJS also includes an (optional) handy class composition syntax:
+CSJS also features class composition that works like CSS Modules:
 
 **common-styles.js**
 ```javascript
@@ -95,21 +94,20 @@ const csjs = require('csjs');
 
 module.exports = csjs`
 
-  .foo {
+  .border {
     border: 1px solid black;
   }
-  
-  .bar {
-    padding: 4px;
+
+  .italic {
     font-family: serif;
-    font-size: 15px;
+    font-style: italic;
   }
 
 `;
 
 ```
 
-**button-styles.js**
+**quote-styles.js**
 ```javascript
 const csjs = require('csjs');
 
@@ -117,13 +115,14 @@ const common = require('./common-styles');
 
 module.exports = csjs`
 
-  .button extends ${common.foo} {
+  .blockQuote extends ${common.italic} {
     background: #ccc;
+    padding: 8px;
     border-radius: 4px;
   }
-  
-  .superButton extends .button, ${common.bar} {
-    background: red;
+
+  .pullQuote extends .blockquote, ${common.border} {
+    background: #eee;
     font-weight: bold;
   }
 
@@ -133,25 +132,40 @@ module.exports = csjs`
 
 **component.js**
 ```javascript
+const getCss = require('csjs/get-css');
+const commonStyles = require('./common-styles');
+const quoteStyles = require('./quote-styles');
 
-var buttonStyles = require('./button-styles');
-var getCss = require('csjs/get-css');
+quoteStyles.blockQuote;
+// => "blockQuote_3Rc9i6 italic_1pM3Qj"
 
-buttonStyles.superButton;
-// => "foo_19Yy9 bar_19Yy9 button_4fdaQ superButton_4fdaQ"
+quoteStyles.pullQuote;
+// => "pullQuote_3Rc9i6 blockQuote_3Rc9i6 italic_1pM3Qj border_1pM3Qj"
 
-getCss(buttonStyles);
+getCss(quoteStyles);
 /*
-  .button_4fdaQ {
-    background: #ccc;
-    border-radius: 4px;
-  }
-  
-  .superButton_4fdaQ {
-    background: red;
-    font-weight: bold;
-  }
+.blockQuote_3Rc9i6 {
+  background: #ccc;
+  padding: 8px;
+  border-radius: 4px;
+}
 
+.pullQuote_3Rc9i6 {
+  background: #eee;
+  font-weight: bold;
+}
+*/
+
+getCss(commonStyles);
+/*
+.border_1pM3Qj {
+  border: 1px solid black;
+}
+
+.italic_1pM3Qj {
+  font-family: serif;
+  font-style: italic;
+}
 */
 ```
 
