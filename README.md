@@ -71,7 +71,7 @@ CSJS runs in ES6 environments without transpilation, compilation, or build steps
 
 [![sauce labs test status][sauce-badge]][sauce-href]
 
-Of course, you can always use Babel to transpile ES6 template strings and polyfill ES6 symbols, allowing you to use CSJS in any ES5 environment.
+Of course, you can always use Babel to transpile ES6 template strings, allowing you to use CSJS in any ES5 environment.
 
 ### Framework-agnostic
 
