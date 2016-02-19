@@ -88,6 +88,8 @@ CSJS works with any framework, be it React, native Web Components, or something 
 
 CSJS also features class composition that works like CSS Modules:
 
+([Live editable codepen.io demo](http://codepen.io/rtsao/pen/RrmpdX?editors=0010))
+
 **common-styles.js**
 ```javascript
 const csjs = require('csjs');
@@ -121,7 +123,7 @@ module.exports = csjs`
     border-radius: 4px;
   }
 
-  .pullQuote extends .blockquote, ${common.border} {
+  .pullQuote extends .blockQuote, ${common.border} {
     background: #eee;
     font-weight: bold;
   }
@@ -130,27 +132,27 @@ module.exports = csjs`
 
 ```
 
-**component.js**
+**app.js**
 ```javascript
 const getCss = require('csjs/get-css');
 const commonStyles = require('./common-styles');
 const quoteStyles = require('./quote-styles');
 
 quoteStyles.blockQuote;
-// => "blockQuote_3Rc9i6 italic_1pM3Qj"
+// => "blockQuote_2bVd7K italic_3YGtO7"
 
 quoteStyles.pullQuote;
-// => "pullQuote_3Rc9i6 blockQuote_3Rc9i6 italic_1pM3Qj border_1pM3Qj"
+// => "pullQuote_2bVd7K blockQuote_2bVd7K italic_3YGtO7 border_3YGtO7"
 
 getCss(quoteStyles);
 /*
-.blockQuote_3Rc9i6 {
+.blockQuote_2bVd7K {
   background: #ccc;
   padding: 8px;
   border-radius: 4px;
 }
 
-.pullQuote_3Rc9i6 {
+.pullQuote_2bVd7K {
   background: #eee;
   font-weight: bold;
 }
@@ -158,11 +160,11 @@ getCss(quoteStyles);
 
 getCss(commonStyles);
 /*
-.border_1pM3Qj {
+.border_3YGtO7 {
   border: 1px solid black;
 }
 
-.italic_1pM3Qj {
+.italic_3YGtO7 {
   font-family: serif;
   font-style: italic;
 }
