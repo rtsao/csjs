@@ -181,6 +181,10 @@ getCss(commonStyles);
 
 [csjs-injectify](https://github.com/rtsao/csjs-injectify) is a browserify transform that will automatically inject your scoped CSS into the `<head>`. It is recommended to use this rather than the [csjs-inject](https://github.com/rtsao/csjs-inject) module directly.
 
+#### PostCSS
+
+[babel-plugin-csjs-postcss](https://github.com/rtsao/babel-plugin-csjs-postcss) is a Babel plugin that allows you to run PostCSS on the CSS contained within CSJS template string literals at build time.
+
 
 ## FAQ
 
@@ -209,6 +213,7 @@ Whereas Radium is wholly dependent on React and involves performance tradeoffs i
 * https://github.com/rtsao/csjs-extractify
 * https://github.com/rtsao/csjs-injectify
 * https://github.com/rtsao/csjs-inject
+* https://github.com/rtsao/babel-plugin-csjs-postcss
 * https://github.com/rtsao/scope-styles
 
 ## License
