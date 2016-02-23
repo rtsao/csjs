@@ -230,13 +230,13 @@ MIT
 
 [csjs-bundle]: https://www.brcdn.org/csjs/latest?standalone=csjs&uglify=true
 
-[npm-badge]: https://img.shields.io/npm/v/csjs.svg
+[npm-badge]: https://badge.fury.io/js/csjs.svg
 [npm-href]: https://www.npmjs.com/package/csjs
 [build-badge]: https://travis-ci.org/rtsao/csjs.svg?branch=master
 [build-href]: https://travis-ci.org/rtsao/csjs
 [coverage-badge]: https://coveralls.io/repos/rtsao/csjs/badge.svg?branch=master&service=github
 [coverage-href]: https://coveralls.io/github/rtsao/csjs?branch=master
-[deps-badge]: https://david-dm.org/rtsao/csjs.svg
+[deps-badge]: https://img.shields.io/badge/dependencies-none-brightgreen.svg
 [deps-href]: https://david-dm.org/rtsao/csjs
 [sauce-badge]: https://saucelabs.com/browser-matrix/csjs.svg
 [sauce-href]: https://saucelabs.com/u/csjs
