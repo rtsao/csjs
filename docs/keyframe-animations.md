@@ -1,4 +1,6 @@
-# Scoped Keyframe Animations
+# CSS3 Keyframe Animations
+
+## Scoped Animations
 
 CSJS scopes your keyframe animations just like class names. Note that they occupy the same namespace, so you can't export a keyframe animation with the same name as a class in the same template string literal.
 
