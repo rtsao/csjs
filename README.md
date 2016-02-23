@@ -199,15 +199,15 @@ Sass doesn't provide any way to scope CSS, thus encapsulation of styles in compo
 
 ##### Why not CSS Modules?
 
-CSJS was inspired by [CSS Modules] and they are virtually identical in concept. However, the key difference is CSS Modules attempts to reproduce an ES6-style module system into your CSS, whereas CSJS simply uses native JS modules and provides a convenient way to write scoped, modular CSS.
+CSJS was inspired by [CSS Modules] and they are virtually identical in concept. However, unlike CSS Modules which attempts to reproduce an ES6-style module system into CSS itself, CSJS simply uses native JS modules. CSJS also uses normal JS variables whereas CSS Modules invents its own CSS variable syntax.
 
-One advantage is CSJS is valid JavaScript so it works without any extra tooling (CSS Modules is not valid CSS). Also, because CSJS is essentially an amalgamation of plain JavaScript and plain CSS, you don't have to learn any new syntax or semantics.
+Consquently, CSJS is merely plain JavaScript and works without any extra tooling (CSS Modules is not valid CSS). Furthermore, because CSJS is essentially an amalgamation of plain JavaScript and plain CSS, there's no any new syntax or semantics to learn (besides the optional composition syntactic sugar, which closely mimicks ES6 classes).
 
 ##### Why not Radium?
 
 Inline styles are cool, but there are limitations to using pure inline styles. For example, CSS pseudo-classes and media queries aren't possible with inline styles. This is the premise behind Radium, which works around this by re-implementing these CSS features using JavaScript.
 
-Whereas Radium is wholly dependent on React and involves performance tradeoffs in its JavaScript implementations of CSS features, CSJS works regardless of framework (or lack thereof) and allows for the use of all CSS features natively (including media queries and pseudo-classes).
+Whereas Radium is wholly dependent on React and involves performance trade-offs in its JavaScript implementations of CSS features, CSJS works regardless of framework (or lack thereof) and allows for the use of all CSS features natively (including media queries and pseudo-classes).
 
 ## See Also
 * https://github.com/rtsao/csjs-example-app
