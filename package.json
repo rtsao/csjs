@@ -6,6 +6,8 @@
     "csjs",
     "css-modules",
     "scoped-css",
+    "css-in-js",
+    "modular-css",
     "css"
   ],
   "author": "Ryan Tsao <ryan.j.tsao@gmail.com>",
