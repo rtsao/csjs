@@ -1,6 +1,6 @@
 'use strict';
 
-var csjs = require('csjs');
+var csjs = require('./lib/csjs');
 
 module.exports = csjs;
 module.exports.csjs = csjs;
