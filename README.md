@@ -3,6 +3,7 @@
 [![build status][build-badge]][build-href]
 [![coverage status][coverage-badge]][coverage-href]
 [![dependencies status][deps-badge]][deps-href]
+[![npm version][npm-badge]][npm-href]
 
 > CSJS allows you to write modular, scoped CSS with valid JavaScript.
 
@@ -229,6 +230,8 @@ MIT
 
 [csjs-bundle]: https://www.brcdn.org/csjs/latest?standalone=csjs&uglify=true
 
+[npm-badge]: https://img.shields.io/npm/v/csjs.svg
+[npm-href]: https://www.npmjs.com/package/csjs
 [build-badge]: https://travis-ci.org/rtsao/csjs.svg?branch=master
 [build-href]: https://travis-ci.org/rtsao/csjs
 [coverage-badge]: https://coveralls.io/repos/rtsao/csjs/badge.svg?branch=master&service=github
