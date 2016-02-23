@@ -8,14 +8,15 @@
 
 ## Features
 * Extremely simple and lightweight
-  * Zero dependencies, [~2KB minified and gzipped][bundle]
+  * Zero dependencies, [~2KB minified and gzipped][csjs-bundle]
 * Leverages native ES6 and CSS features <sup>[(1)]</sup> rather than reinventing the wheel
-  * Seamless scoped styles and dead-simple variables/mixins using tagged ES6 template strings
-  * Modular styles with explicit dependencies powered by native CommonJS/ES6 modules
-  * Style composition via natural class composition mechanics already in CSS/HTML
-* Works tooling-free; no required transpilation/compilation/build steps <sup>[(2)]</sup>
+  * Seamless modular, scoped styles with explicit dependencies powered by CommonJS/ES6 modules
+  * Dead-simple variables/mixins using tagged ES6 template strings
+  * Style composition with optimal reuse via natural class composition mechanics already in CSS/HTML<sup>[(2)]</sup>
+* Works tooling-free; no required transpilation/compilation/build steps <sup>[(3)]</sup>
 * Framework-agnostic (No React dependency; works with Web Components, etc.)
 * Fully supported native CSS media queries, pseudo-classes, keyframe animations, etc.
+* Server-rendered/universal JavaScript support
 
 ## Quick Example
 ([Live editable codepen.io demo](http://codepen.io/rtsao/pen/jWRJZj?editors=0010))
@@ -86,7 +87,7 @@ CSJS works with any framework, be it React, native Web Components, or something 
 
 ### Class Composition Syntax
 
-CSJS also features class composition that works like CSS Modules:
+CSJS also features class composition that works like [CSS Modules]:
 
 ([Live editable codepen.io demo](http://codepen.io/rtsao/pen/RrmpdX?editors=0010))
 
@@ -175,15 +176,15 @@ getCss(commonStyles);
 
 #### Extracted static CSS bundles
 
-[csjs-extractify](https://github.com/rtsao/csjs-extractify) is a browserify plugin that will allow you to extract your application's CSJS into a static CSS file at build time.
+[csjs-extractify](https://github.com/rtsao/csjs-extractify) is a browserify plugin that allows you to extract your application's CSJS into a static CSS file at build time.
 
 #### Automatic CSS injection
 
-[csjs-injectify](https://github.com/rtsao/csjs-injectify) is a browserify transform that will automatically inject your scoped CSS into the `<head>`. It is recommended to use this rather than the [csjs-inject](https://github.com/rtsao/csjs-inject) module directly.
+[csjs-injectify](https://github.com/rtsao/csjs-injectify) is a browserify transform that automatically replaces `csjs` with [`csjs-inject`](https://github.com/rtsao/csjs-inject), which automatically injects your scoped CSS into the `<head>` at runtime. It is recommended to use this rather than the [csjs-inject](https://github.com/rtsao/csjs-inject) module directly.
 
 #### PostCSS
 
-[babel-plugin-csjs-postcss](https://github.com/rtsao/babel-plugin-csjs-postcss) is a Babel plugin that allows you to run PostCSS on the CSS contained within CSJS template string literals at build time.
+[babel-plugin-csjs-postcss](https://github.com/rtsao/babel-plugin-csjs-postcss) is a Babel plugin that allows you to run PostCSS on the CSS contained within CSJS template string literals at build time. Works with plugins such as [Autoprefixer].
 
 
 ## FAQ
@@ -220,9 +221,13 @@ Whereas Radium is wholly dependent on React and involves performance tradeoffs i
 MIT
 
 [(1)]: #full-power-of-javascript-in-your-css
-[(2)]: #simple-tooling-free
+[(2)]: #class-composition-syntax
+[(3)]: #simple-tooling-free
+
 [CSS Modules]: https://github.com/css-modules/css-modules
-[bundle]: https://www.brcdn.org/csjs/latest?standalone=csjs&uglify=true
+[Autoprefixer]: https://github.com/postcss/autoprefixer
+
+[csjs-bundle]: https://www.brcdn.org/csjs/latest?standalone=csjs&uglify=true
 
 [build-badge]: https://travis-ci.org/rtsao/csjs.svg?branch=master
 [build-href]: https://travis-ci.org/rtsao/csjs
