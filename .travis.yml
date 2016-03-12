@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-- '4.3'
+- '4'
 script: if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then npm run travis-test && npm run travis-test-browser; else npm run travis-test; fi
 env:
   global:
