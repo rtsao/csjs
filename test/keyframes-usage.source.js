@@ -8,4 +8,8 @@ module.exports = csjs`
     animation: ${keyframes.yolo} 5s infinite;
   }
 
+  .boo {
+     animation-name: ${keyframes.yoloYolo};
+   }
+
 `;

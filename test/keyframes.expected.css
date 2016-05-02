@@ -1,11 +1,20 @@
 
 
-  @keyframes yolo_2OKdOh {
+  @keyframes yolo_4lrRRM {
     0%   { opacity: 0; }
     100% { opacity: 1; }
   }
 
-  .foo_2OKdOh {
-    animation: yolo_2OKdOh 5s infinite;
+  .foo_4lrRRM {
+    animation: yolo_4lrRRM 5s infinite;
+  }
+
+  @keyframes yoloYolo_4lrRRM {
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  .bar_4lrRRM {
+    animation: yoloYolo_4lrRRM 5s infinite;
   }
 
