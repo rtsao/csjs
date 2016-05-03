@@ -228,7 +228,7 @@ MIT
 [CSS Modules]: https://github.com/css-modules/css-modules
 [Autoprefixer]: https://github.com/postcss/autoprefixer
 
-[csjs-bundle]: https://www.brcdn.org/csjs/latest?standalone=csjs&uglify=true
+[csjs-bundle]: https://wzrd.in/bundle/csjs@latest
 
 [npm-badge]: https://badge.fury.io/js/csjs.svg
 [npm-href]: https://www.npmjs.com/package/csjs
