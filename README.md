@@ -187,6 +187,9 @@ getCss(commonStyles);
 
 [babel-plugin-csjs-postcss](https://github.com/rtsao/babel-plugin-csjs-postcss) is a Babel plugin that allows you to run PostCSS on the CSS contained within CSJS template string literals at build time. Works with plugins such as [Autoprefixer].
 
+#### Syntax highlighting
+[neurosnap](https://github.com/neurosnap) has created an [Atom plugin for syntax highlighting](https://github.com/neurosnap/language-csjs) CSS within CSJS tagged template strings.
+
 
 ## FAQ
 
