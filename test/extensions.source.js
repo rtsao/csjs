@@ -14,4 +14,8 @@ module.exports = csjs`
     text-transform: uppercase;
   }
 
+  .bazz extends .bar{
+    color: white;
+  }
+
 `;
