@@ -1,0 +1,8 @@
+
+
+  @media screen and (min-width: 769px) {
+    .foo_25D7El:not(.bar_25D7El) {
+      display: flex;
+    }
+  }
+
