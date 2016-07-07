@@ -4,6 +4,7 @@ browsers:
     version: latest
   - name: firefox
     version: latest
+    platform: linux
   - name: safari
     version: latest
   - name: iphone
