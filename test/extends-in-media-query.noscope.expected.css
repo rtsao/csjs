@@ -1,0 +1,30 @@
+
+
+  .woot {
+    color: red;
+  }
+
+  .hello {
+    font-size: 10px;
+  }
+
+  .yay {
+    font-weight: bold;
+  }
+
+  @media (max-width: 480px) {
+    .woot {
+      color: blue;
+    }
+  }
+
+  @media (max-width: 580px) {
+    .woot {
+      color: green;
+    }
+  }
+
+  .underline {
+    text-decoration: underline;
+  }
+
