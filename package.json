@@ -11,13 +11,17 @@
     "css"
   ],
   "author": "Ryan Tsao <ryan.j.tsao@gmail.com>",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "dist-es/index.js",
   "homepage": "https://github.com/rtsao/csjs",
   "repository": "git@github.com:rtsao/csjs.git",
   "bugs": "https://github.com/rtsao/csjs/issues",
   "scripts": {
     "prepublish": "npm run transpile",
     "transpile": "babel src -d dist --copy-files",
+    "rollup": "rollup src/index.js --output dist-es/index.js",
+    "transpile-rollup": "BABEL_ENV=rollup babel dist-es/index.js -o dist-es/index.es5.js -s",
+    "build": "npm run rollup && npm run transpile-rollup",
     "test": "npm run transpile && node dist/test/index.js",
     "cover": "istanbul cover dist/test/index.js",
     "travis-test": "npm run cover && ((cat coverage/lcov.info | coveralls) || exit 0)",
@@ -34,6 +38,7 @@
     "folderify": "https://github.com/rtsao/folderify/tarball/patch-1",
     "include-folder": "^1.0.0",
     "istanbul": "^0.4.0",
+    "rollup": "^0.36.4",
     "tape": "^4.2.0",
     "zuul": "^3.8.0"
   },
