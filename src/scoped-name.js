@@ -1,5 +1,5 @@
-import encode from './base62-encode';
-import hash from './hash-string';
+import encode from './hash-utils/base62-encode';
+import hash from './hash-utils/hash-string';
 
 export default function fileScoper(fileSrc) {
   const suffix = encode(hash(fileSrc));
