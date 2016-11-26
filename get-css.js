@@ -1,3 +1,1 @@
-'use strict';
-
-module.exports = require('./lib/get-css');
+module.exports = require('./dist/get-css');
