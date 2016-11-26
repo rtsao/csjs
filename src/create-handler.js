@@ -8,12 +8,7 @@ import extractExports from './extract-exports';
 export default function createHandler(opts = {}) {
   const noscope = (typeof opts.noscope === 'undefined') ? false : opts.noscope;
 
-  return function csjsHandler(strings, values) {
-    // Fast path to prevent arguments deopt
-    var values = Array(arguments.length - 1);
-    for (let i = 1; i < arguments.length; i++) {
-      values[i - 1] = arguments[i];
-    }
+  return function csjsHandler(strings, ...values) {
     const css = joiner(strings, values.map(selectorize));
     const ignores = ignoreComposition(values);
 
