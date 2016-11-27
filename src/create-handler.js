@@ -1,5 +1,5 @@
 import extractExtends from './css-extract-extends';
-import {isComposition, ignoreComposition} from './composition';
+import {isComposition} from './composition';
 import buildExports from './build-exports';
 import scopify from './scopeify';
 import cssKey from './css-key';
@@ -8,12 +8,11 @@ import extractExports from './extract-exports';
 export default function createHandler({scoped = true} = {scoped: true}) {
   return function csjsHandler(strings, ...values) {
     const css = joiner(strings, values.map(selectorize));
-    const ignores = ignoreComposition(values);
-
-    const scope = scoped ? scopify(css, ignores) : extractExports(css);
+    const preScoped = getClassMap(values);
+    const scope = scoped ? scopify(css, preScoped) : extractExports(css);
     const extracted = extractExtends(scope.css);
-    const localClasses = without(scope.classes, ignores);
-    const localKeyframes = without(scope.keyframes, ignores);
+    const localClasses = without(scope.classes, preScoped);
+    const localKeyframes = without(scope.keyframes, preScoped);
     const compositions = extracted.compositions;
 
     const exports = buildExports(localClasses, localKeyframes, compositions);
@@ -26,6 +25,17 @@ export default function createHandler({scoped = true} = {scoped: true}) {
     });
   }
 };
+
+function getClassMap(values) {
+  return values.reduce((acc, val) => {
+    if (isComposition(val)) {
+      val.classNames.forEach((name, i) => {
+        acc[name] = val.unscoped[i];
+      });
+    }
+    return acc;
+  }, {});
+}
 
 /**
  * Replaces class compositions with comma seperated class selectors

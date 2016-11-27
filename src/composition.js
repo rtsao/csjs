@@ -51,17 +51,6 @@ export function isComposition(value) {
   return value instanceof Composition;
 }
 
-export function ignoreComposition(values) {
-  return values.reduce((acc, val) => {
-    if (isComposition(val)) {
-      val.classNames.forEach((name, i) => {
-        acc[name] = val.unscoped[i];
-      });
-    }
-    return acc;
-  }, {});
-}
-
 /**
  * Private constructor for use in `instanceof` checks
  */

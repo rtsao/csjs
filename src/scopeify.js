@@ -8,13 +8,13 @@ const replacers = {
 };
 const replacerKeys = Object.keys(replacers);
 
-export default function scopify(css, ignores) {
+export default function scopify(css, preScoped) {
   const makeScopedName = fileScoper(css);
 
   function scopeCss(result, key) {
     const replacer = replacers[key];
     function replaceFn(fullMatch, prefix, name) {
-      const scopedName = ignores[name] ? name : makeScopedName(name);
+      const scopedName = preScoped[name] ? name : makeScopedName(name);
       result[key][scopedName] = name;
       return prefix + scopedName;
     }
