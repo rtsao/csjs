@@ -1,3 +1,3 @@
 import createHandler from './create-handler';
 
-export default createHandler({noscope: true});
+export default createHandler({scoped: false});

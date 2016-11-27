@@ -5,14 +5,12 @@ import scopify from './scopeify';
 import cssKey from './css-key';
 import extractExports from './extract-exports';
 
-export default function createHandler(opts = {}) {
-  const noscope = (typeof opts.noscope === 'undefined') ? false : opts.noscope;
-
+export default function createHandler({scoped = true} = {scoped: true}) {
   return function csjsHandler(strings, ...values) {
     const css = joiner(strings, values.map(selectorize));
     const ignores = ignoreComposition(values);
 
-    const scope = noscope ? extractExports(css) : scopify(css, ignores);
+    const scope = scoped ? scopify(css, ignores) : extractExports(css);
     const extracted = extractExtends(scope.css);
     const localClasses = without(scope.classes, ignores);
     const localKeyframes = without(scope.keyframes, ignores);
